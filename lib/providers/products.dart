@@ -10,14 +10,14 @@ class Products with ChangeNotifier {
         price: 29.99,
         imageUrl: 'https://i.ebayimg.com/images/g/3YgAAOSwcZ1cHLMj/s-l300.jpg'),
     Product(
-        id: 'p1',
-        title: 'Red Shirt',
+        id: 'p2',
+        title: 'Green Shirt',
         description: 'A red shirt - it is pretty red!',
         price: 29.99,
         imageUrl: 'https://i.ebayimg.com/images/g/3YgAAOSwcZ1cHLMj/s-l300.jpg'),
     Product(
-        id: 'p1',
-        title: 'Red Shirt',
+        id: 'p3',
+        title: 'Blue Shirt',
         description: 'A red shirt - it is pretty red!',
         price: 29.99,
         imageUrl: 'https://i.ebayimg.com/images/g/3YgAAOSwcZ1cHLMj/s-l300.jpg'),
@@ -27,6 +27,10 @@ class Products with ChangeNotifier {
     // All of object in flutter are references type.
     // We must return a pointer at object memory.
     return [..._items];
+  }
+
+  Product findById(String id) {
+    return _items.firstWhere((prod) => prod.id == id);
   }
 
   void addProdect() {
